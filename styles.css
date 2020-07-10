@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap');
+
+body {
+  background: #2b2b2f;
+}
+
+/* Ensures that everything inside the container is positioned in the center */
+.container {
+  top: 0;
+  left: 0;
+  position: absolute;
+  margin: auto;
+  margin: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Gradient circle that spins around image */
+.circle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 420px;
+  width: 420px;
+  border-radius: 50%;
+  background: linear-gradient(#0096ff 60%, #93ff1f);
+  animation: animate 2s linear infinite;
+}
+
+/*
+If you don't need an image in the middle but a solid circle, remove the comments and coment out .profile-image.
+
+.circle:after {
+  background-image: url(https://i.imgur.com/iThPH23.png);
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  border-radius: 50%;
+  background-color: black;
+} 
+*/
+
+/* Sets the gradient blur effect */
+.circle span {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#0096ff 60%, #93ff1f);
+  border-radius: 50%;
+}
+
+/* 
+Adds blur effect to the rotating circle
+
+If filter: blur does not work for you, there are others you can try in your browser
+*/
+.circle span:nth-child(1){
+/*   -moz-filter:blur(5px);
+  -o-filter:blur(5px);
+  -webkit-filter:blur(5px); */
+  filter: blur(5px);
+}
+
+.circle span:nth-child(2){
+/*   -moz-filter:blur(10px);
+  -o-filter:blur(10px);
+  -webkit-filter:blur(10px); */
+  filter: blur(10px);
+}
+
+.circle span:nth-child(3){
+/*   -moz-filter:blur(20px);
+  -o-filter:blur(20px);
+  -webkit-filter:blur(20px); */
+  filter: blur(20px);
+}
+
+.circle span:nth-child(4){
+/*   -moz-filter:blur(55px);
+  -o-filter:blur(55px);
+  -webkit-filter:blur(55px); */
+  filter: blur(35px);
+}
+
+/* Profile image sizing and positioning */
+.profile-image {
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  max-width: 400px;
+}
+
+/* Rotating animation */
+@keyframes animate {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+  
+}
+
+/* Socials */
+.social {
+  text-decoration: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  background: linear-gradient(45deg, #0096ff 60%, #93ff1f);
+  background-size: 500% 500%;
+  color: #fff;
+  text-align: center;
+  animation: footerGradient 15s ease infinite;
+}
+
+@keyframes footerGradient {
+  0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+ul {
+  text-align: center;
+  list-style-type: none;
+}
+
+li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a {
+  font-family: 'Work Sans', sans-serif;
+  text-decoration: none;
+  font-size: 24px;
+  color: #fff;
+}
